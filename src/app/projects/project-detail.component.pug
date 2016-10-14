@@ -1,0 +1,31 @@
+.panel.panel-primary(*ngIf='project')
+  .panel-heading(style='font-size:large')
+    | {{pageTitle + ': ' + project.projectName }}
+  .panel-body
+    .row
+      .col-md-6
+        .row
+          .col-md-3 Name:
+          .col-md-6 {{project.projectName}}
+        .row
+          .col-md-3 Code:
+          .col-md-6 {{project.projectCode}}
+        .row
+          .col-md-3 Description:
+          .col-md-6 {{project.description}}
+        .row
+          .col-md-3 Availability:
+          .col-md-6 {{project.releaseDate}}
+        .row
+          .col-md-3 Price:
+          .col-md-6 {{project.price|currency:'USD':true}}
+        .row
+          .col-md-3 5 Star Rating:
+          .col-md-6
+            ai-star([rating]='project.starRating', (ratingclicked)='onRatingClicked($event)')
+      .col-md-6
+        img.center-block.img-responsive([style.width.px]='200', [style.margin.px]='2', [src]='project.imageUrl', [title]='project.projectName')
+  .panel-footer
+    a.btn.btn-default((click)='onBack()', style='width:80px')
+      i.glyphicon.glyphicon-chevron-left
+      |  Back

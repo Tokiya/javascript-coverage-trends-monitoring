@@ -1,0 +1,36 @@
+.panel.panel-primary
+  .panel-heading
+    | {{pageTitle}}
+  // Filter the Projects
+  .panel-body
+    .row
+      .col-md-2 Filter by:
+      .col-md-4
+        input(type='text', [(ngModel)]='listFilter')
+    .row(*ngIf='listFilter')
+      .col-md-6
+        h3 Filtered by: {{listFilter}} 
+    .has-error(*ngIf='errorMessage') {{errorMessage}}
+    .table-responsive
+      table.table(*ngIf='projects && projects.length')
+        thead
+          tr
+            th
+              button.btn.btn-primary((click)='toggleImage()')
+                | {{showImage ? 'Hide' : 'Show'}} Image
+            th Project
+            th Code
+            th Available
+            th Price
+            th 5 Star Rating
+        tbody
+          tr(*ngFor='let project of projects | projectFilter:listFilter')
+            td
+              img(*ngIf='showImage', [src]='project.imageUrl', [title]='project.projectName | uppercase', [style.width.px]='imageWidth', [style.margin.px]='imageMargin')
+            td
+              a([routerLink]="['/project', project.projectId]")
+                | {{project.projectName}}
+            td {{ project.releaseDate }}
+            td {{ project.price | currency:'USD':true:'1.2-2' }}
+            td
+              ai-star([rating]='project.starRating', (ratingclicked)='onRatingClicked($event)')
