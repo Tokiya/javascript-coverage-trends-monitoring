@@ -3,7 +3,7 @@ export interface IProject {
     projectId: number;
     projectName: string;
     releaseDate: string;
-    price: number;
+    coverage: number;
     description: string;
     starRating: number;
     imageUrl: string;

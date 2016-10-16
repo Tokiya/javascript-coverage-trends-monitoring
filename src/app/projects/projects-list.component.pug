@@ -19,9 +19,8 @@
               button.btn.btn-primary((click)='toggleImage()')
                 | {{showImage ? 'Hide' : 'Show'}} Image
             th Project
-            th Code
             th Available
-            th Price
+            th Coverage
             th 5 Star Rating
         tbody
           tr(*ngFor='let project of projects | projectFilter:listFilter')
@@ -31,6 +30,6 @@
               a([routerLink]="['/project', project.projectId]")
                 | {{project.projectName}}
             td {{ project.releaseDate }}
-            td {{ project.price | currency:'USD':true:'1.2-2' }}
+            td {{ project.coverage }}
             td
               ai-star([rating]='project.starRating', (ratingclicked)='onRatingClicked($event)')
