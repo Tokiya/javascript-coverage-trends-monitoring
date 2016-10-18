@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './home/welcome.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-  { path: 'welcome', component: WelcomeComponent }
+  // { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+  // { path: '', component: WelcomeComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
