@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
     <div>
         <nav class='navbar navbar-default'>
             <div class='container-fluid'>
-                <a class='navbar-brand'>{{pageTitle}}</a>
+                <a class='navbar-brand' [routerLink]="['/']">{{appTitle}}</a>
                 <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['/welcome']">Home</a></li>
-                    <li><a [routerLink]="['/projects']">Product List</a></li>
+                    <li><a [routerLink]="['/projects']">Projects List</a></li>
                 </ul>
             </div>
         </nav>
@@ -20,5 +19,5 @@ import { Component } from '@angular/core';
      `
 })
 export class AppComponent {
-    pageTitle: string = 'Coverage Monitoring';
+    appTitle: string = 'Coverage Monitoring';
 }
