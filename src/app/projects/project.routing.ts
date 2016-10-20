@@ -6,8 +6,11 @@ import { ProjectDetailComponent } from './project-detail.component';
 
 export const projectRoutes: Routes = [
   { path: '', component: ProjectsListComponent },
-  { path: 'projects', component: ProjectsListComponent },
-  { path: 'project/:id', component: ProjectDetailComponent }
+  { path: 'projects',
+    children: [
+      { path: '', component: ProjectsListComponent },
+      { path: ':id', component: ProjectDetailComponent }
+    ] },
 ];
 
 export const projectRouting: ModuleWithProviders =

@@ -5,7 +5,7 @@ import { WelcomeComponent } from './home/welcome.component';
 
 const appRoutes: Routes = [
   // { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-  // { path: '', component: WelcomeComponent }
+  { path: 'about', component: WelcomeComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
