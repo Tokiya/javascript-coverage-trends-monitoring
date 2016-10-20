@@ -1,0 +1,9 @@
+div
+  nav.navbar.navbar-default
+    .container-fluid
+      a.navbar-brand([routerLink]="['/']") {{appTitle}}
+      ul.nav.navbar-nav
+        li(routerLinkActive="active"): a([routerLink]="['/projects']") Projects List
+        li(routerLinkActive="active"): a([routerLink]="['/about']") About
+  .container
+    router-outlet
