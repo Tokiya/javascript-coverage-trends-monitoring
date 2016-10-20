@@ -1,0 +1,20 @@
+.coverage-pill {
+
+    width: 50px;
+    display: block;
+    text-align: center;
+    color: #fff !important;
+    font-size: .8em;
+    border-radius: 3px;
+    padding: 0;
+    height: 19px;
+    line-height: 19px;
+    border-left: none;
+
+    background: blue; /* highlight invalid cells */
+
+    &.none   { background: #aaaaaa; }
+    &.low    { background: #ee415c; }
+    &.medium { background: #d9ad0b; }
+    &.high   { background: #6ba927; }
+}
